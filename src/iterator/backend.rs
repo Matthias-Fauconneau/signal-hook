@@ -142,7 +142,7 @@ impl<E: Exfiltrator> AddSignal for PendingSignals<E> {
             ex.store(slot, signal, act);
             write.wake_readers();
         };
-        let id = unsafe { signal_hook_registry::register_sigaction(signal, action) }?;
+        let id = unsafe { signal_hook_registry::register_unchecked(signal, action) }?;
         Ok(id)
     }
 }

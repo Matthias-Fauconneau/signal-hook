@@ -14,7 +14,7 @@ pub mod pipe;
 pub mod siginfo;
 mod signal_details;
 
-pub use signal_hook_registry::{register, unregister};
+pub use signal_hook_registry::{register_signal_unchecked as register, unregister};
 
 pub use self::signal_details::{emulate_default_handler, signal_name};
 
